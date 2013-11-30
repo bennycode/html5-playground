@@ -16,7 +16,11 @@
   -webkit-user-select: none;
 }
 
-#facebook-widget.hover {
+body.desktop #facebook-widget:hover {
+  right: 0px;
+}
+
+body.mobile #facebook-widget.hover {
   right: 0px;
 }
 
@@ -27,14 +31,22 @@
   z-index: 9;
   /* Dimension */
   height: 60px;
-  width: 54px;
-  left: -54px;
   /* Design */
   background-color: #3B5998;
   background-image: url("../images/facebook-button.png");
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;        
+}
+
+body.desktop #facebook-widget #facebook-widget-icon {
+  width: 34px;
+  left: -34px;
+}
+
+body.mobile #facebook-widget #facebook-widget-icon {
+  width: 54px;
+  left: -54px;
 }
 
 #facebook-widget #facebook-widget-content {

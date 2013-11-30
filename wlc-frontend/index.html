@@ -3,7 +3,7 @@
   <head>
     <title>Hello World!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/facebook-widget.css" />
   </head>
   <body>
     <!-- Facebook JavaScript SDK -->
@@ -24,7 +24,7 @@
       <div id="facebook-widget-content">
         <!-- Facebook Like Box -->
         <div class="fb-like-box" 
-             data-href="http://www.facebook.com/welovecoding" 
+             data-href="https://www.facebook.com/welovecoding" 
              data-width="237" 
              data-height="389" 
              data-colorscheme="light" 
@@ -35,15 +35,8 @@
         </div>
       </div>
     </div>
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script>
-      $('#facebook-widget').on('touchstart', function() {
-        $(this).toggleClass('hover');
-      }).hover(function() {
-        $(this).addClass('hover');
-      }, function() {
-        $(this).removeClass('hover');
-      });
-    </script>
+    <script src="js/lib/jquery-2.0.3.min.js"></script>
+    <script src="js/facebook-widget.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
