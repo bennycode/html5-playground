@@ -1,0 +1,8 @@
+#facebook-widget:hover {
+  right: 0px;
+}
+
+#facebook-widget #facebook-widget-icon {
+  width: 54px;
+  left: -54px;
+}
