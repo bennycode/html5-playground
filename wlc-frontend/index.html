@@ -3,7 +3,9 @@
   <head>
     <title>Hello World!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="css/facebook-widget.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/sidebar-widgets.css" />
   </head>
   <body>
     <!-- Facebook JavaScript SDK -->
@@ -14,14 +16,28 @@
         if (d.getElementById(id)) return;
         js = d.createElement(s);
         js.id = id;
-        js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
+        js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1&appId=245151515509317";
+
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+    <!-- Apps Widget -->
+    <div id="apps-widget" class="sidebar-widget">
+      <div id="apps-widget-icon" class="sidebar-icon">    
+        <i class="fa fa-mobile"></i>
+      </div>
+      <div id="apps-widget-content" class="sidebar-content">
+        <!-- Our apps... -->
+        <p>
+          <strong>We Love Coding</strong>
+        </p>
+        <p>Lorem ipsum.</p>
+      </div>
+    </div>
     <!-- Facebook Widget -->
-    <div id="facebook-widget">
-      <div id="facebook-widget-icon"></div>
-      <div id="facebook-widget-content">
+    <div id="facebook-widget" class="sidebar-widget">
+      <div id="facebook-widget-icon" class="sidebar-icon"></div>
+      <div id="facebook-widget-content" class="sidebar-content">
         <!-- Facebook Like Box -->
         <div class="fb-like-box" 
              data-href="https://www.facebook.com/welovecoding" 
@@ -36,7 +52,6 @@
       </div>
     </div>
     <script src="js/lib/jquery-2.0.3.min.js"></script>
-    <script src="js/facebook-widget.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
