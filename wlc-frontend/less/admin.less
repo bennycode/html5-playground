@@ -1,0 +1,57 @@
+/* Variables */
+
+@imagePath: "../images/admin";
+
+body.admin {
+  background: #f7f7f7 url("@{imagePath}/gray_jean.png");
+
+  .loginwrapper {
+    width: 400px;
+    margin: 80px auto 0 auto;
+    @media screen and (max-width: 479px) {
+      width: 280px; 
+    }
+    input { 
+      width: 100%; 
+      -webkit-box-sizing: border-box; 
+      -moz-box-sizing: border-box; 
+      box-sizing: border-box;
+      padding: 10px; 
+      min-height: 44px; 
+      font-size: 14px !important; 
+      border: 0; 
+      color: #999;
+      background: #eee; 
+      padding-left: 30px; 
+      username { 
+        color: red;
+        background: #eee url("@{imagePath}/username.png") no-repeat 8px 12px; 
+      }
+    }
+
+    p { 
+      margin: 20px 0; 
+      &:first-child { margin-top: 0; }
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+}
+
+
+.loginwrapper input#password { background: #eee url("@{imagePath}/password.png") no-repeat 8px 12px; }
+.loginwrapper input#username.error,
+.loginwrapper input#password.error { background-color: #ffeaea; color: #ff0000; }
+.loginwrapper input:focus { 
+  background-color: #fff;
+  color: #666 !important; 
+  box-shadow: 0 0 8px rgba(0,0,0,0.8) !important;
+}
+.loginwrapper button.btn { 
+  padding: 12px 0; border: 0; text-transform: uppercase; font-size: 13px; text-shadow: 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.3); 
+}
+.loginwrapper a { color: #999; }
+
+.loginwrapper input, .loginwrapper a { 
+  -moz-transition: all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out 0s; transition: all 0.2s ease-out 0s; 
+}
