@@ -4,23 +4,83 @@
     <title>Hello World!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.delay.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/admin.css" />
   </head>
   <body class="admin">
     <div class="loginwrapper">
       <div class="loginwrap zindex100 animate2 bounceInDown">
-        <h1 class="logintitle"><span class="iconfa-lock"></span> Sign In <span class="subtitle">Hello! Sign in to get you started!</span></h1>
+        <div class="header">
+          <div class="left lock">
+            <i class="fa fa-lock fa-3x"></i>
+          </div>
+          <div class="left">
+            <span class="title">LOGIN</span>
+            <span class="subTitle">Sign in to manage the website!</span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
         <div class="loginwrapperinner">
           <form id="loginform" action="dashboard.html" method="post">
-            <p class="animate4 bounceIn"><input type="text" id="username" name="username" placeholder="Username" /></p>
-            <p class="animate5 bounceIn"><input type="password" id="password" name="password" placeholder="Password" /></p>
-            <p class="animate6 bounceIn"><button class="btn btn-default btn-block">Submit</button></p>
-            <p class="animate7 fadeIn"><a href=""><span class="icon-question-sign icon-white"></span> Forgot Password?</a></p>
+            <p class="animate4 bounceIn">
+              <input type="text" id="username" name="username" placeholder="Username" />
+            </p>
+            <p class="animate5 bounceIn">
+              <input type="password" id="password" name="password" placeholder="Password" />
+            </p>
+            <p class="animate6 bounceIn">
+              <button class="btn btn-default btn-block">Submit</button>
+            </p>
+            <p class="animate7 fadeIn forgotPassword">
+              <i class="fa fa-question-circle"></i> Forgot Password?
+            </p>
           </form>
         </div>
       </div>
       <div class="loginshadow animate3 fadeInUp"></div>
     </div>
+    <script src="js/lib/jquery-2.0.3.min.js"></script>
+    <script>
+      jQuery(document).ready(function($) {
+        var animationEnd = 'animationend oAnimationEnd MSAnimationEnd webkitAnimationEnd';
+        $('.loginwrap').bind(animationEnd, function() {
+          $(this).removeClass('animate2 bounceInDown');
+        });
+
+        $('#username,#password').focus(function() {
+          if ($(this).hasClass('error')) {
+            $(this).removeClass('error');
+          }
+        });
+
+        $('#loginform button').click(function() {
+          if ($('#username').val() === '' || $('#password').val() === '') {
+            if ($('#username').val() === '') {
+              $('#username').addClass('error');
+            }
+            else {
+              $('#username').removeClass('error');
+            }
+            if ($('#password').val() === '') {
+              $('#password').addClass('error');
+            }
+            else {
+              $('#password').removeClass('error');
+            }
+
+            $('.loginwrap').addClass('animate0 wobble').bind(animationEnd, function() {
+              $(this).removeClass('animate0 wobble');
+            });
+          } else {
+            $('.loginwrapper').addClass('animate0 fadeOutUp').bind(animationEnd, function() {
+              $('#loginform').submit();
+            });
+          }
+          return false;
+        });
+      });
+    </script>
   </body>
 </html>
